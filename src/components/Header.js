@@ -41,12 +41,12 @@ const styles = StyleSheet.create({
   },
   linearGradient: {
     height: 230,
-    width: width - 160,
+    width: width - 190,
     left: 0,
     backgroundColor: 'red',
     top: -50,
     borderRadius: 160,
-    transform: [{scaleX: 2.1}],
+    transform: [{scaleX: 4}],
   },
   text: {
     backgroundColor: 'transparent',
