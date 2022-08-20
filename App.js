@@ -13,13 +13,15 @@
  */
 
 import {StyleSheet, View} from 'react-native';
-import Header from './src/components/Header.js';
-import Navbar from './src/components/Navbar.js';
+import DevicesList from './src/components/DevicesList/DevicesList.js';
+import Header from './src/components/Header/Header.js';
+import Navbar from './src/components/Navbar/Navbar.js';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <Header/>
+      <DevicesList/>
       <Navbar style={styles.navbar}/>
     </View>
   );
