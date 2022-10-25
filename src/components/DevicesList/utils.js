@@ -16,16 +16,18 @@ import axios from 'axios';
 
 /**
  * Changes the state of the specified switch.
- * @param {string} switchId The switch ID.
+ * @param {string} switchId The switch ID (e.g 1, 2, 3 etc.).
  */
 export const onCustomSwitchPress = (switchId) => {
-  const URL = `http://192.168.0.104:8081/cloud/change-switch-state`;
+  const URL = `http://46.101.246.223:8081/cloud/change-switch-state`;
   axios({
     method: 'post',
     url: URL,
     data: {
       switchId: switchId,
     },
+  }).then((response) => {
+    console.log(response);
   })
       .catch((error) => console.error(error));
 };
