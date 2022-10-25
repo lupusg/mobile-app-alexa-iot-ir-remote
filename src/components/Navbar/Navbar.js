@@ -33,7 +33,7 @@ const Navbar = (props) => {
             <Icon
               name='help'
               color='#14a404'/>
-            <Text>idk yet</Text>
+            <Text>Signals</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity>
