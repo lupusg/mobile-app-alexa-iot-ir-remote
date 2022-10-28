@@ -13,17 +13,27 @@
  */
 
 import {StyleSheet, View} from 'react-native';
-import DevicesList from './src/components/DevicesList/DevicesList.js';
-import Header from './src/components/Header/Header.js';
-import Navbar from './src/components/Navbar/Navbar.js';
+import HomeScreen from './src/screens/HomeScreen.js';
+import {NavigationContainer, StackActions} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import SettingsScreen from './src/screens/SettingsScreen.js';
+
+const NavigationStack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Header/>
-      <DevicesList/>
-      <Navbar style={styles.navbar}/>
-    </View>
+    <NavigationContainer>
+      <NavigationStack.Navigator>
+        <NavigationStack.Screen
+          name="Home"
+          component={HomeScreen}
+        />
+        <NavigationStack.Screen
+          name="Settings"
+          component={SettingsScreen}
+        />
+      </NavigationStack.Navigator>
+    </NavigationContainer>
   );
 }
 
