@@ -20,7 +20,9 @@ const Navbar = (props) => {
     // eslint-disable-next-line react/prop-types
     <View style={styles.container}>
       <View style={styles.itemsContainer}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+          props.navigation.navigate('Home');
+        }}>
           <View style={styles.navbarItem}>
             <Icon
               name='home'
@@ -28,20 +30,24 @@ const Navbar = (props) => {
             <Text>Home</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+          props.navigation.navigate('Devices');
+        }}>
           <View style={styles.navbarItem}>
             <Icon
-              name='help'
+              name='devices'
               color='#14a404'/>
-            <Text>Signals</Text>
+            <Text>Switches</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+          props.navigation.navigate('Settings');
+        }}>
           <View style={styles.navbarItem}>
             <Icon
-              name='help'
+              name='settings'
               color='#14a404'/>
-            <Text>idk yet</Text>
+            <Text>Settings</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -60,17 +66,17 @@ const styles = StyleSheet.create({
   itemsContainer: {
     width: '100%',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     alignItems: 'flex-end',
-    paddingHorizontal: 20,
+    paddingHorizontal: 0,
     marginBottom: 20,
     backgroundColor: '#fff',
   },
   navbarItem: {
-    width: 50,
-    height: 50,
+    width: '100%',
+    height: 48,
     alignItems: 'center',
-    margin: 'auto',
+    // margin: 'auto',
     padding: 2,
   },
 });

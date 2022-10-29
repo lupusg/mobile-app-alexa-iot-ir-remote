@@ -12,24 +12,23 @@
  * @author Vlad-Marian Lupu
  */
 
-import {Button} from 'react-native';
 import {StyleSheet, View} from 'react-native';
 import DevicesList from '../components/DevicesList/DevicesList.js';
 import Header from '../components/Header/Header.js';
 import Navbar from '../components/Navbar/Navbar.js';
 
-const HomeScreen = ({navigation}) => {
+const HomeScreen = (props) => {
   return (
     <View style={styles.container}>
       <Header/>
       <DevicesList/>
-      <Navbar style={styles.navbar} />
-      <Button
+      <Navbar {...props} style={styles.navbar} />
+      {/* <Button
         title="Go to Jane's profile"
         onPress={() =>
           navigation.navigate('Settings')
         }
-      />
+      /> */}
     </View>
   );
 };

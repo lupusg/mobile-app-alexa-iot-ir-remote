@@ -29,7 +29,7 @@ const Header = (props) => {
       >
       </LinearGradient>
       <Text style={styles.text}>
-          My Devices
+          My switches
       </Text>
     </View>
   );

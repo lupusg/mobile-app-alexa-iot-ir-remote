@@ -18,21 +18,21 @@ import {NavigationContainer, StackActions} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SettingsScreen from './src/screens/SettingsScreen.js';
 
-const NavigationStack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <NavigationStack.Navigator>
-        <NavigationStack.Screen
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen
           name="Home"
           component={HomeScreen}
         />
-        <NavigationStack.Screen
+        <Stack.Screen
           name="Settings"
           component={SettingsScreen}
         />
-      </NavigationStack.Navigator>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
