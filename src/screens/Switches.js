@@ -7,28 +7,23 @@
  *
  * Mobile Application
  *
- * @desc The main screen of the app.
- * @since October 25, 2022
+ * @desc The switches screen.
+ * @since October 29, 2022
  * @author Vlad-Marian Lupu
  */
 
 import {StyleSheet, View} from 'react-native';
+
 import DevicesList from '../components/DevicesList/DevicesList.js';
 import Header from '../components/Header/Header.js';
 import Navbar from '../components/Navbar/Navbar.js';
 
-const HomeScreen = (props) => {
+const SwitchesScreen = (props) => {
   return (
     <View style={styles.container}>
-      <Header/>
-      <DevicesList/>
+      <Header name="My switches" />
+      <DevicesList />
       <Navbar {...props} style={styles.navbar} />
-      {/* <Button
-        title="Go to Jane's profile"
-        onPress={() =>
-          navigation.navigate('Settings')
-        }
-      /> */}
     </View>
   );
 };
@@ -45,4 +40,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default SwitchesScreen;
