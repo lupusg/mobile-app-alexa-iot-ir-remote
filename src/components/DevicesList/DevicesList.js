@@ -16,7 +16,7 @@
 import {
   StyleSheet, View, Text, ScrollView, TouchableOpacity,
 } from 'react-native';
-import {getData} from './utils.js';
+import {getData} from '../../services/SignalService.js';
 
 const DATA = getData();
 
@@ -46,7 +46,8 @@ const DevicesList = (props) => {
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
-    height: '50%',
+    height: '60%',
+    top: -50,
     flexDirection: 'row',
     width: '90%',
     // borderWidth: 1,
