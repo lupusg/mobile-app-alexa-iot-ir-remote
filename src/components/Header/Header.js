@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /**
  * NodeMCU Alexa IOT Infrared Remote
  *
@@ -14,6 +15,7 @@
 
 import {StyleSheet, View, Text, Dimensions} from 'react-native';
 import {LinearGradient} from 'expo-linear-gradient';
+import {Color} from '../../constants/GlobalStyles.js';
 
 const {width: width} = Dimensions.get('window');
 
@@ -24,13 +26,11 @@ const Header = (props) => {
         start={{x: 0.8, y: 0.2}}
         end={{x: 0.5, y: 1.0}}
         locations={[0.1, 1]}
-        colors={['#31b331', '#006405']}
+        colors={[Color.main, Color.secondary]}
         style={styles.linearGradient}
       >
       </LinearGradient>
-      <Text style={styles.text}>
-          My switches
-      </Text>
+      <Text style={styles.text}>{props.name}</Text>
     </View>
   );
 };
