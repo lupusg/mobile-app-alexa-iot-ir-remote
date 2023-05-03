@@ -1,54 +1,56 @@
-/**
- * NodeMCU Alexa IOT Infrared Remote
- *
- * Convert old devices that are not compatible
- * with Alexa into compatible ones using infrared
- * signals.
- *
- * Mobile Application
- *
- * @desc Navigation bar component.
- * @since August 11, 2022
- * @author Vlad-Marian Lupu
- */
-
-import {TouchableOpacity, StyleSheet, View, Text} from 'react-native';
-import {Icon} from '@rneui/base';
+import * as React from 'react';
+import {Image, StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import {
+  Color,
+  FontSize,
+  Padding,
+} from '../../constants/GlobalStyles';
 
 const Navbar = (props) => {
+  const navigate = props.navigation.navigate;
   return (
-    // eslint-disable-next-line react/prop-types
-    <View style={styles.container}>
-      <View style={styles.itemsContainer}>
-        <TouchableOpacity onPress={() => {
-          props.navigation.navigate('Home');
-        }}>
-          <View style={styles.navbarItem}>
-            <Icon
-              name='home'
-              color='#14a404'/>
-            <Text>Home</Text>
-          </View>
+    <View style={[styles.mobileNavbar, styles.btnsFlexBox]}>
+      <View style={[styles.ellipseParent, styles.groupPosition]}>
+        <Image
+          style={[styles.groupChild, styles.groupPosition]}
+          resizeMode="cover"
+          source={require('../../../assets/ellipse-38.png')}
+        />
+        <View style={[styles.groupItem, styles.groupPosition]} />
+      </View>
+      <View style={[styles.btns, styles.groupPosition]}>
+        <TouchableOpacity
+          onPress={() => navigate('Home')}
+          style={[styles.homeLightParent, styles.lightParentSpaceBlock]}
+        >
+          <Image
+            style={styles.homeLightIcon}
+            resizeMode="cover"
+            source={require('../../../assets/home-light.png')}
+          />
+          <Text style={styles.home}>Home</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => {
-          props.navigation.navigate('Devices');
-        }}>
-          <View style={styles.navbarItem}>
-            <Icon
-              name='devices'
-              color='#14a404'/>
-            <Text>Switches</Text>
-          </View>
+        <TouchableOpacity
+          onPress={() => navigate('Switches')}
+          style={styles.filterBigAltParent}
+        >
+          <Image
+            style={styles.homeLightIcon}
+            resizeMode="cover"
+            source={require('../../../assets/filter-big-alt.png')}
+          />
+          <Text style={styles.home}>Switches</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => {
-          props.navigation.navigate('Settings');
-        }}>
-          <View style={styles.navbarItem}>
-            <Icon
-              name='settings'
-              color='#14a404'/>
-            <Text>Settings</Text>
-          </View>
+        <TouchableOpacity
+          onPress={() => navigate('Settings')}
+          style={[styles.settingLineLightParent, styles.lightParentSpaceBlock]}
+        >
+          <Image
+            style={styles.homeLightIcon}
+            resizeMode="cover"
+            source={require('../../../assets/setting-line-light.png')}
+          />
+          <Text style={styles.home}>Settings</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -56,28 +58,85 @@ const Navbar = (props) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-    flex: 1,
+  btnsFlexBox: {
+    justifyContent: 'space-between',
     flexDirection: 'row',
-    alignItems: 'flex-end',
-    // borderWidth: 1,
+    paddingVertical: 0,
   },
-  itemsContainer: {
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'flex-end',
-    paddingHorizontal: 0,
-    marginBottom: 20,
-    backgroundColor: '#fff',
+  groupPosition: {
+    top: '50%',
+    position: 'absolute',
   },
-  navbarItem: {
+  lightParentSpaceBlock: {
+    paddingVertical: 0,
+    alignItems: 'center',
+  },
+  groupChild: {
+    maxWidth: '100%',
     width: '100%',
     height: 48,
+    marginTop: -42,
+    top: '50%',
+    left: 0,
+    right: 0,
+    overflow: 'hidden',
+  },
+  groupItem: {
+    marginTop: -24,
+    backgroundColor: Color.darkslategray,
+    height: 66,
+    left: 0,
+    right: 0,
+  },
+  ellipseParent: {
+    zIndex: 0,
+    marginTop: -42,
+    top: '50%',
+    left: 0,
+    right: 0,
+    height: 84,
+  },
+  homeLightIcon: {
+    width: 24,
+    height: 24,
+  },
+  home: {
+    fontSize: FontSize.size_xs,
+    color: Color.white,
+    textAlign: 'left',
+    marginTop: 4,
+  },
+  homeLightParent: {
+    paddingHorizontal: Padding.p_7xs,
     alignItems: 'center',
-    // margin: 'auto',
-    padding: 2,
+  },
+  filterBigAltParent: {
+    alignItems: 'center',
+  },
+  settingLineLightParent: {
+    paddingHorizontal: Padding.p_12xs,
+    alignItems: 'center',
+  },
+  btns: {
+    marginTop: -15,
+    right: 24,
+    left: 25,
+    paddingHorizontal: Padding.p_5xs,
+    zIndex: 1,
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    paddingVertical: 0,
+  },
+  mobileNavbar: {
+    bottom: 0,
+    paddingHorizontal: Padding.p_xl,
+    alignItems: 'center',
+    overflow: 'hidden',
+    height: 84,
+    left: 0,
+    right: 0,
+    position: 'absolute',
+    flexDirection: 'row',
   },
 });
 
