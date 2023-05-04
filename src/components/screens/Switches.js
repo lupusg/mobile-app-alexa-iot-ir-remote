@@ -14,9 +14,9 @@
 
 import {StyleSheet, View} from 'react-native';
 
-import DevicesList from '../components/DevicesList/DevicesList.js';
-import Header from '../components/Header/Header.js';
-import Navbar from '../components/Navbar/Navbar.js';
+import DevicesList from '../devices/DevicesList.js';
+import Header from '../shared/Header/Header.js';
+import Navbar from '../shared/Navbar/Navbar.js';
 
 const SwitchesScreen = (props) => {
   return (

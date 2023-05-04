@@ -15,7 +15,7 @@
 
 import {StyleSheet, View, Text, Dimensions} from 'react-native';
 import {LinearGradient} from 'expo-linear-gradient';
-import {Color} from '../../constants/GlobalStyles.js';
+import {Color} from '../../../constants/GlobalStyles.js';
 
 const {width: width} = Dimensions.get('window');
 

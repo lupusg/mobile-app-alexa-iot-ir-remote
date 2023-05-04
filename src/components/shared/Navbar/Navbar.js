@@ -4,7 +4,7 @@ import {
   Color,
   FontSize,
   Padding,
-} from '../../constants/GlobalStyles';
+} from '../../../constants/GlobalStyles.js';
 
 const Navbar = (props) => {
   const navigate = props.navigation.navigate;
@@ -14,7 +14,7 @@ const Navbar = (props) => {
         <Image
           style={[styles.groupChild, styles.groupPosition]}
           resizeMode="cover"
-          source={require('../../../assets/ellipse-38.png')}
+          source={require('../../../../assets/ellipse-38.png')}
         />
         <View style={[styles.groupItem, styles.groupPosition]} />
       </View>
@@ -26,7 +26,7 @@ const Navbar = (props) => {
           <Image
             style={styles.homeLightIcon}
             resizeMode="cover"
-            source={require('../../../assets/home-light.png')}
+            source={require('../../../../assets/home-light.png')}
           />
           <Text style={styles.home}>Home</Text>
         </TouchableOpacity>
@@ -37,7 +37,7 @@ const Navbar = (props) => {
           <Image
             style={styles.homeLightIcon}
             resizeMode="cover"
-            source={require('../../../assets/filter-big-alt.png')}
+            source={require('../../../../assets/filter-big-alt.png')}
           />
           <Text style={styles.home}>Switches</Text>
         </TouchableOpacity>
@@ -48,7 +48,7 @@ const Navbar = (props) => {
           <Image
             style={styles.homeLightIcon}
             resizeMode="cover"
-            source={require('../../../assets/setting-line-light.png')}
+            source={require('../../../../assets/setting-line-light.png')}
           />
           <Text style={styles.home}>Settings</Text>
         </TouchableOpacity>

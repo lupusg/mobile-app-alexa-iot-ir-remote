@@ -15,9 +15,9 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import HomeScreen from './src/screens/Home.js';
-import SettingsScreen from './src/screens/Settings.js';
-import SwitchesScreen from './src/screens/Switches.js';
+import HomeScreen from './src/components/screens/Home.js';
+import SettingsScreen from './src/components/screens/Settings.js';
+import SwitchesScreen from './src/components/screens/Switches.js';
 
 const Stack = createNativeStackNavigator();
 

@@ -7,20 +7,21 @@
  *
  * Mobile Application
  *
- * @desc The settings screen.
+ * @desc The main screen of the app.
  * @since October 25, 2022
  * @author Vlad-Marian Lupu
  */
 
-import {View, StyleSheet} from 'react-native';
-import Header from '../components/Header/Header';
-import Navbar from '../components/Navbar/Navbar';
+import {StyleSheet, View} from 'react-native';
+import Header from '../shared/Header/Header.js';
+import Navbar from '../shared/Navbar/Navbar.js';
 
-const SettingsScreen = (props) => {
+const HomeScreen = (props) => {
   return (
     <View style={styles.container}>
-      <Header name="Settings"/>
-      <Navbar {...props} style={styles.navbar} />
+      <Header name="Home"/>
+      {/* <Navbar {...props} style={styles.navbar} /> */}
+      <Navbar {...props} />
     </View>
   );
 };
@@ -37,4 +38,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SettingsScreen;
+export default HomeScreen;
