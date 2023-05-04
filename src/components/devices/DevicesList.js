@@ -23,7 +23,7 @@ import {onCustomSwitchPress} from '../../services/ApiService';
  * Creates an array used as Devices list.
  * @return {Object[]} Array of objects for the list.
  */
-export const getData = () => {
+export const getButtonsList = () => {
   const data = [];
   for (let index = 0; index < 10; ++index) {
     data.push({
@@ -35,7 +35,7 @@ export const getData = () => {
   return data;
 };
 
-const Item = ({title}) => (
+const DeviceListItem = ({title}) => (
   <TouchableOpacity onPress={() => {
     title.onPress(title.id + 1);
   }}>
@@ -46,12 +46,12 @@ const Item = ({title}) => (
 );
 
 const DevicesList = (props) => {
-  const DATA = getData();
+  const buttons = getButtonsList();
   return (
     <View style={styles.container}>
       <ScrollView>
-        {DATA.map((item) => (
-          <Item key={item.id} title={item}/>
+        {buttons.map((item) => (
+          <DeviceListItem key={item.id} title={item}/>
         ))}
       </ScrollView>
     </View>
