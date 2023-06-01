@@ -5,7 +5,9 @@ const api = axios.create({
   baseURL: Constants.expoConfig.extra.API_URL,
 });
 
-export const authorize = async (username, password) => {
+export const authorize = async () => {
+  const username = Constants.expoConfig.extra.API_USERNAME;
+  const password = Constants.expoConfig.extra.API_PASSWORD;
   try {
     const response = await api.post('/auth/login', {username, password});
     const {token} = response.data;
@@ -22,10 +24,20 @@ export const authorize = async (username, password) => {
  * Changes the state of the specified switch.
  * @param {string} switchId The switch ID (e.g 1, 2, 3 etc.).
  */
-export const onCustomSwitchPress = async (switchId) => {
+export const changeSwitchState = async (switchId) => {
   try {
     await api.post('/cloud/change-switch-state', {switchId});
   } catch (error) {
     console.error(error);
+  }
+};
+
+export const toggleIrReceiving = async () => {
+  try {
+    await api.post('/toggle-receiving');
+    return true;
+  } catch (error) {
+    console.log(error);
+    return false;
   }
 };
