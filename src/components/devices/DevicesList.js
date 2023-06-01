@@ -17,7 +17,7 @@ import {
   StyleSheet, View, Text, ScrollView, TouchableOpacity,
 } from 'react-native';
 
-import {onCustomSwitchPress} from '../../services/ApiService';
+import {changeSwitchState} from '../../services/ApiService';
 
 /**
  * Creates an array used as Devices list.
@@ -29,7 +29,7 @@ export const getButtonsList = () => {
     data.push({
       id: index,
       title: `Custom Switch ${index + 1}`,
-      onPress: onCustomSwitchPress,
+      onPress: changeSwitchState,
     });
   }
   return data;
@@ -57,7 +57,6 @@ const DevicesList = (props) => {
     </View>
   );
 };
-
 
 const styles = StyleSheet.create({
   container: {
