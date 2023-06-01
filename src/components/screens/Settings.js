@@ -13,20 +13,28 @@
  */
 
 import {View, StyleSheet, Button} from 'react-native';
+import {Color} from '../../constants/GlobalStyles.js';
 import Header from '../shared/Header/Header.js';
 import Navbar from '../shared/Navbar/Navbar.js';
-import {authorize} from '../../services/ApiService.js';
-import Constants from 'expo-constants';
+import {
+  authorize, toggleIrReceiving,
+} from '../../services/ApiService.js';
+
+const onToggleIrReceivingPress = async () => {
+  if (!await toggleIrReceiving()) {
+    await authorize();
+    await toggleIrReceiving();
+  }
+};
 
 const SettingsScreen = (props) => {
-  const username = Constants.expoConfig.extra.API_USERNAME;
-  const password = Constants.expoConfig.extra.API_PASSWORD;
   return (
     <View style={styles.container}>
       <Header name="Settings" />
-      <Button title="Retry API login" onPress={async () => {
-        await authorize(username, password);
-      }} />
+      <Button color={Color.main} title="Toggle IR receiving"
+        onPress={async () => {
+          await onToggleIrReceivingPress();
+        }}/>
       <Navbar {...props} style={styles.navbar} />
     </View>
   );

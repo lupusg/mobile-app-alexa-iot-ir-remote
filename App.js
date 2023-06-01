@@ -12,34 +12,10 @@
  * @author Vlad-Marian Lupu
  */
 
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-import HomeScreen from './src/components/screens/Home.js';
-import SettingsScreen from './src/components/screens/Settings.js';
-import SwitchesScreen from './src/components/screens/Switches.js';
-
-const Stack = createNativeStackNavigator();
+import MainNavigator from './src/navigation/MainNavigator.js';
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={
-        {headerShown: false, animation: 'slide_from_right'}
-      }>
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-        />
-        <Stack.Screen
-          name="Switches"
-          component={SwitchesScreen}
-        />
-        <Stack.Screen
-          name="Settings"
-          component={SettingsScreen}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <MainNavigator/>
   );
 }
