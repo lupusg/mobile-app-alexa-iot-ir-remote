@@ -12,29 +12,10 @@
  * @author Vlad-Marian Lupu
  */
 
-import {StyleSheet, View} from 'react-native';
-import DevicesList from './src/components/DevicesList/DevicesList.js';
-import Header from './src/components/Header/Header.js';
-import Navbar from './src/components/Navbar/Navbar.js';
+import MainNavigator from './src/navigation/MainNavigator.js';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Header/>
-      <DevicesList/>
-      <Navbar style={styles.navbar}/>
-    </View>
+    <MainNavigator/>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f3f3f3',
-    alignItems: 'center',
-    // justifyContent: 'center',
-  },
-  navbar: {
-    alignItems: 'flex-end',
-  },
-});

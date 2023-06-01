@@ -16,11 +16,26 @@
 import {
   StyleSheet, View, Text, ScrollView, TouchableOpacity,
 } from 'react-native';
-import {getData} from './utils.js';
 
-const DATA = getData();
+import {changeSwitchState} from '../../services/ApiService';
 
-const Item = ({title}) => (
+/**
+ * Creates an array used as Devices list.
+ * @return {Object[]} Array of objects for the list.
+ */
+export const getButtonsList = () => {
+  const data = [];
+  for (let index = 0; index < 10; ++index) {
+    data.push({
+      id: index,
+      title: `Custom Switch ${index + 1}`,
+      onPress: changeSwitchState,
+    });
+  }
+  return data;
+};
+
+const DeviceListItem = ({title}) => (
   <TouchableOpacity onPress={() => {
     title.onPress(title.id + 1);
   }}>
@@ -31,22 +46,23 @@ const Item = ({title}) => (
 );
 
 const DevicesList = (props) => {
+  const buttons = getButtonsList();
   return (
     <View style={styles.container}>
       <ScrollView>
-        {DATA.map((item) => (
-          <Item key={item.id} title={item}/>
+        {buttons.map((item) => (
+          <DeviceListItem key={item.id} title={item}/>
         ))}
       </ScrollView>
     </View>
   );
 };
 
-
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
     height: '50%',
+    // top: -50,
     flexDirection: 'row',
     width: '90%',
     // borderWidth: 1,
