@@ -14,3 +14,9 @@ web-build/
 .DS_Store
 .env
 app.json
+
+android/
+.vscode/
+/app.json
+app.json
+eas.json
