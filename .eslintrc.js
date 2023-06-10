@@ -23,5 +23,6 @@ module.exports = {
     'require-jsdoc': 0,
     'react/react-in-jsx-scope': 0,
     'react/prop-types': ['error', {'ignore': ['navigation']}],
+    'linebreak-style': 0,
   },
 };
