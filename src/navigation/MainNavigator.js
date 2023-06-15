@@ -3,10 +3,10 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 
-import HomeScreen from '../components/screens/Home';
-import SettingsScreen from '../components/screens/Settings';
-import SwitchesScreen from '../components/screens/Switches';
-import SplashScreen from '../components/screens/Splash';
+import HomeScreen from '../screens/Home';
+import SettingsScreen from '../screens/Settings';
+import SwitchesScreen from '../screens/Switches';
+import SplashScreen from '../screens/Splash';
 
 const Stack = createNativeStackNavigator();
 

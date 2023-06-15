@@ -14,15 +14,15 @@
 
 import {StyleSheet, View} from 'react-native';
 
-import DevicesList from '../devices/DevicesList.js';
-import Header from '../shared/Header/Header.js';
-import Navbar from '../shared/Navbar/Navbar.js';
+import SwitchList from '../components/devices/SwitchList.js';
+import Header from '../components/shared/Header/Header.js';
+import Navbar from '../components/shared/Navbar/Navbar.js';
 
 const SwitchesScreen = (props) => {
   return (
     <View style={styles.container}>
       <Header name="My switches" />
-      <DevicesList />
+      <SwitchList />
       <Navbar {...props} style={styles.navbar} />
     </View>
   );

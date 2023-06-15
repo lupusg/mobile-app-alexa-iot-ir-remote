@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {View, StyleSheet, Text} from 'react-native';
-import {authorize} from '../../services/ApiService';
+import {authorize} from '../services/ApiService';
 
 const SplashScreen = (props) => {
   const [appIsReady, setAppIsReady] = useState(false);

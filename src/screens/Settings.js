@@ -13,12 +13,12 @@
  */
 
 import {View, StyleSheet, Button} from 'react-native';
-import {Color} from '../../constants/GlobalStyles.js';
-import Header from '../shared/Header/Header.js';
-import Navbar from '../shared/Navbar/Navbar.js';
+import {Color} from '../constants/GlobalStyles.js';
+import Header from '../components/shared/Header/Header.js';
+import Navbar from '../components/shared/Navbar/Navbar.js';
 import {
   authorize, toggleIrReceiving,
-} from '../../services/ApiService.js';
+} from '../services/ApiService.js';
 
 const onToggleIrReceivingPress = async () => {
   if (!await toggleIrReceiving()) {
